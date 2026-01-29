@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=7">
+    <meta name="description" content="Це приклад HTML-документа з українською локалізацією.">
+    <meta name="keywords" content="HTML, приклад, українська, локалізація">
+    <!--  <meta http-equiv="refresh" content="0; url=http://127.0.0.1:5500/"> -->
+    <!-- <meta http-equiv="refresh" content="1"> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body {
+            background: lightgreen;
+        }
+    </style>
     <title>Document</title>
+    <noscript>
+        <p>JavaScript is disabled in your browser.</p>
+    </noscript>
+    <base href="http://127.0.0.1:5500/">
 </head>
-<body>
+
+<body style="background: lightgoldenrodyellow">
     <h1>Hello World</h1>
-    <h1>Hello World</h1>
+    <br>
+    <h2>Hello World</h2>
+    <hr>
+    <h6>Hello World</h6>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+        Quaerat rem laborum dolor commodi expedita, ad asperiores eveniet cum dicta apedgssssssssssssssssssssssdgdgdsfgdsge<wbr>gedgdgdfgdfdfgdfgdfgdfgdferhrhnhdfhbdfbdfbriam velit enim accusamus inventore architecto. Quidem sunt iusto molestias quis!</p>
+    <a href="https://example.com"><cite>example.com</cite></a>
+        <i>Курсивний текст</i>
+    <em>Емоційно-забарвлений текст!</em>
+    <b>Жирний текст</b>
+    <strong>Акцентований текст</strong>
+    <u>Підкреслений текст</u>
+    <s>Перечоркнутий текст</s>
+    <del>Видалений текст</del>
+    <ins>оновлений текст</ins>
+    <p><dfn><abbr title="Мова розмітки гіпертексту">HTML</abbr></dfn> - це стандартна мова для створення веб-сторінок.</p>
+    <blockquote сite="https://example.com">
+        Цитата: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+    </blockquote>
+    <q>Коротка цитата</q>
+    <mark>Маркований текст</mark>
+    <span>Для продовження натисніть <kbd>Enter</kbd></span>
+    <big>Збільшений текст</big>
+    <span><var>x</var><sup>2</sup>+<var>y</var> = <output>20</output></span>
+    H<sub>2</sub>O
+    <small>Зменшений текст</small>
+        <time id="date"></time>
+        <center>Центрований текст</center>
+
+    <script>
+        function updateClock() {
+            let date = new Date();
+            let timeString = "Current Time: " + date.toLocaleTimeString('uk-UA');
+            document.getElementById("date").innerHTML = timeString;
+            document.getElementById("date").setAttribute("datetime", date.toISOString());
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+    </script>
+    <code>console.log("Hello World");</code>
+    <samp>Hello World</samp>
+    <pre>Текст                              with     irregular    spacing.</pre>
 </body>
+
 </html>
