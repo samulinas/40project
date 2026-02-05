@@ -14,9 +14,62 @@
     <style>
         body {
             background: lightgreen;
+            display: grid;
+            grid-template-areas:
+                "header header"
+                "main aside"
+                "footer footer";
         }
+
+        header {
+            background: lightcyan;
+            grid-area: header;
+        }
+
+        footer {
+            background: lightgray;
+            text-align: center;
+            grid-area: footer;
+        }
+
+        main {
+            grid-area: main;
+        }
+
+        aside {
+            background: lightpink;
+            grid-area: aside;
+            height: 100vh;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        .div {
+            display: table-cell;
+            width: 100px;
+            height: 100px;
+            background: lightcoral;
+            vertical-align: middle;
+        }
+/*         thead {
+            background: lightseagreen;
+        }
+        tbody {
+            background: lightyellow;
+        }
+        tfoot {
+            background: lightgray;
+        } */
     </style>
-    <title>Document</title>
+    <title>Про HTML - WEB BOOK</title>
     <noscript>
         <p>JavaScript is disabled in your browser.</p>
     </noscript>
@@ -24,118 +77,199 @@
 </head>
 
 <body style="background: lightgoldenrodyellow">
-    <h1>Hello World</h1>
-    <br>
-    <h2>Hello World</h2>
-    <hr>
-    <h6>Hello World</h6>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
-        Quaerat rem laborum dolor commodi expedita, ad asperiores eveniet cum dicta
-        apedgssssssssssssssssssssssdgdgdsfgdsge<wbr>gedgdgdfgdfdfgdfgdfgdfgdferhrhnhdfhbdfbdfbriam velit enim accusamus inventore architecto. Quidem sunt iusto molestias quis!
-    </p>
-    <a href="https://example.com"><cite>example.com</cite></a>
-    <i>Курсивний текст</i>
-    <em>Емоційно-забарвлений текст!</em>
-    <b>Жирний текст</b>
-    <strong>Акцентований текст</strong>
-    <u>Підкреслений текст</u>
-    <s>Перечоркнутий текст</s>
-    <del>Видалений текст</del>
-    <ins>оновлений текст</ins>
-    <p><dfn><abbr title="Мова розмітки гіпертексту">HTML</abbr></dfn> - це стандартна мова для створення веб-сторінок.
-    </p>
-    <blockquote сite="https://example.com">
-        Цитата: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
-    </blockquote>
-    <q>Коротка цитата</q>
-    <mark>Маркований текст</mark>
-    <span>Для продовження натисніть <kbd>Enter</kbd></span>
-    <big>Збільшений текст</big>
-    <span><var>x</var><sup>2</sup>+<var>y</var> = <output>20</output></span>
-    H<sub>2</sub>O
-    <small>Зменшений текст</small>
-    <time id="date"></time>
-    <center>Центрований текст</center>
+    <header>
+        <h1>Про HTML</h1><br>
+        <p><dfn><abbr title="Мова розмітки гіпертексту">HTML</abbr></dfn> - це стандартна мова для створення
+            веб-сторінок.
+        </p>
+        <nav>
+            <a href="/">Головна</a> |
+            <a href="#date">Поточна дата і час</a> |
+            <a href="https://example.com">Example.com</a> |
+            <a href="contact.html">Контакти</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Hello World</h2>
+            <h6>Hello World</h6>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
+                Quaerat rem laborum dolor commodi expedita, ad asperiores eveniet cum dicta
+                apedgssssssssssssssssssssssdgdgdsfgdsge<wbr>gedgdgdfgdfdfgdfgdfgdfgdferhrhnhdfhbdfbdfbriam velit enim accusamus inventore architecto. Quidem sunt iusto molestias quis!
+            </p>
+            <a href="https://example.com"><cite>example.com</cite></a>
+            <hr>
+            <article>
+                <h3>Заголовок статті</h3>
+                <p>Це приклад статті в HTML.</p>
+                <p>Автор: Іван Іванов</p>
+            </article>
+            <hr>
+            <article>
+                <h3>Заголовок статті</h3>
+                <p>Це приклад статті в HTML.</p>
+                <p>Автор: Іван Іванов</p>
+            </article>
+            <hr>
+            <i>Курсивний текст</i>
+            <em>Емоційно-забарвлений текст!</em>
+            <b>Жирний текст</b>
+            <strong>Акцентований текст</strong>
+            <u>Підкреслений текст</u>
+            <s>Перечоркнутий текст</s>
+            <del>Видалений текст</del>
+            <ins>оновлений текст</ins>
+            <blockquote сite="https://example.com">
+                Цитата: Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quod.
+            </blockquote>
+            <q>Коротка цитата</q>
+            <mark>Маркований текст</mark>
+            <span>Для продовження натисніть <kbd>Enter</kbd></span>
+            <big>Збільшений текст</big>
+            <span><var>x</var><sup>2</sup>+<var>y</var> = <output>20</output></span>
+            H<sub>2</sub>O
+            <time id="date"></time>
+            <center>Центрований текст</center>
+            <div class="div">
+                Контейнерний елемент div
+            </div>
 
-    <script>
-        function updateClock() {
-            let date = new Date();
-            let timeString = "Current Time: " + date.toLocaleTimeString('uk-UA');
-            document.getElementById("date").innerHTML = timeString;
-            document.getElementById("date").setAttribute("datetime", date.toISOString());
-        }
-        updateClock();
-        setInterval(updateClock, 1000);
-    </script>
-    <code>console.log("Hello World");</code>
-    <samp>Hello World</samp>
-    <pre>Текст                              with     irregular    spacing.</pre>
-    <math>
-        <mtable>
-            <mtr>
-                <mtd>
-                    <mrow>
-                        <msqrt>
-                            <mo>|</mo>
-                            <msup>
-                                <mi>k</mi>
-                                <mn>3</mn>
-                            </msup>
-                            <mo>+</mo>
-                            <mo>sin</mo>
-                            <mi>k</mi>
-                            <mo>|</mo>
-                        </msqrt>
-                    </mrow>
-                </mtd>
-            </mtr>
-            <mtr>
-                <mtd>
-                    <mrow>
-                        <mfrac>
+            <script>
+                function updateClock() {
+                    let date = new Date();
+                    let timeString = "Current Time: " + date.toLocaleTimeString('uk-UA');
+                    document.getElementById("date").innerHTML = timeString;
+                    document.getElementById("date").setAttribute("datetime", date.toISOString());
+                }
+                updateClock();
+                setInterval(updateClock, 1000);
+            </script>
+            <code>console.log("Hello World");</code>
+            <samp>Hello World</samp>
+            <pre>Текст                              with     irregular    spacing.</pre>
+            <math>
+                <mtable>
+                    <mtr>
+                        <mtd>
                             <mrow>
-                                <msup>
-                                    <mo>cos</mo>
-                                    <mn>4</mn>
-                                </msup>
-                                <mi>k</mi>
+                                <msqrt>
+                                    <mo>|</mo>
+                                    <msup>
+                                        <mi>k</mi>
+                                        <mn>3</mn>
+                                    </msup>
+                                    <mo>+</mo>
+                                    <mo>sin</mo>
+                                    <mi>k</mi>
+                                    <mo>|</mo>
+                                </msqrt>
                             </mrow>
+                        </mtd>
+                    </mtr>
+                    <mtr>
+                        <mtd>
                             <mrow>
-                                <msup>
-                                    <mo>k</mo>
-                                    <mn>3</mn>
-                                </msup>
+                                <mfrac>
+                                    <mrow>
+                                        <msup>
+                                            <mo>cos</mo>
+                                            <mn>4</mn>
+                                        </msup>
+                                        <mi>k</mi>
+                                    </mrow>
+                                    <mrow>
+                                        <msup>
+                                            <mo>k</mo>
+                                            <mn>3</mn>
+                                        </msup>
+                                    </mrow>
+                                </mfrac>
                             </mrow>
-                        </mfrac>
-                    </mrow>
-                </mtd>
-            </mtr>
-        </mtable>
-    </math>
-    <ol type="I" start="4">
-        <li>Текст 1</li>
-        <li>Текст 2</li>
-        <li>Текст 3</li>
-    </ol>
-    <ul>
-        <li>Текст 1</li>
-        <li>Текст 2</li>
-        <li>Текст 3</li>
-    </ul>
-    <dl>
-        <dt>Термін 1</dt>
-        <dd>Опис терміну 1</dd>
-        <dt>Термін 2</dt>
-        <dd>Опис терміну 2</dd>
-        <dt>Термін 3</dt>
-        <dd>Опис терміну 3</dd>
-    </dl>
-    <figure>
-        <img src="https://htmlreference.io/images/sunset-720.jpg" width="200" alt="Захід сонця">
-        <figcaption>Рисунок 1.1 - Захід сонця над морем</figcaption>
-    </figure>
-    <audio src="https://htmlreference.io/assets/Hal.mp3" autoplay muted loop controls></audio>
-    <video src="https://htmlreference.io/assets/HTML%205%20Video.mp4" autoplay width="200" muted></video>
+                        </mtd>
+                    </mtr>
+                </mtable>
+            </math>
+            <table>
+                <caption>Таблиця 1.1 - Приклад таблиці</caption>
+                <colgroup>
+                <col span="2" style="background-color:rgb(57, 122, 144)">
+                <col span="1" style="background-color:rgb(112, 185, 209)">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>1</th>
+                        <th>2</th>
+                        <th>3</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="2">4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <td colspan="2">10</td>
+                    <td>12</td>
+                </tfoot>
+            </table>
+            <form action="post.php" method="post" autocomplete="off">
+                <input type="text" maxlength="30" placeholder="Введіть текст" value="Введіть текст" name="text" readonly>
+                <input type="number" name="number" id="number" min="1" max="10" step="0.5" value="5">
+                <input type="date" name="date" id="date">
+                <input type="time" name="time" id="time">
+                <input type="datetime-local" name="datetime-local" id="datetime-local">
+                <input type="week" name="week" id="week">
+                <input type="month" name="month" id="month">
+                <input type="datetime" name="datetime" id="datetime" placeholder="05.02.2026" pattern="\d\d\.\d\d\.\d\d\d\d" title="Введіть дату формату 00.00.0000" value="05.02.2026">
+                <input type="reset" value="Скинути">
+                <input type="button" value="Натисни мене" onclick="alert('Ви натиснули кнопку!')">
+                <input type="file" name="file" id="file" accept="application/zip" multiple>
+                <button type="reset"><img src="https://htmlreference.io/images/html-reference-type.png" width="100" alt="HTML5 Logo"></button>
+                <input type="image" src="https://htmlreference.io/images/html-reference-type.png" width="100" alt="Кнопка зображення">
+                <input type="color" name="color" id="color">
+                <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._]+@gmail\.com" title="Введіть email у форматі example@gmail.com" placeholder="Введіть email">
+                <input type="tel" name="tel" id="tel" pattern="\+380\d{2}-\d{2}-\d{2}-\d{3}" title="Введіть телефон у форматі +38000-00-00-000" placeholder="Введіть телефон">
+                <input type="submit" value="Відправити">
+            </form>
+        </section>
+    </main>
+    <aside>
+        <ol type="I" start="4">
+            <li>Текст 1</li>
+            <li>Текст 2</li>
+            <li>Текст 3</li>
+        </ol>
+        <ul>
+            <li>Текст 1</li>
+            <li>Текст 2</li>
+            <li>Текст 3</li>
+        </ul>
+        <dl>
+            <dt>Термін 1</dt>
+            <dd>Опис терміну 1</dd>
+            <dt>Термін 2</dt>
+            <dd>Опис терміну 2</dd>
+            <dt>Термін 3</dt>
+            <dd>Опис терміну 3</dd>
+        </dl>
+        <figure>
+            <img src="https://htmlreference.io/images/sunset-720.jpg" width="200" alt="Захід сонця">
+            <figcaption>Рисунок 1.1 - Захід сонця над морем</figcaption>
+        </figure>
+        <audio src="https://htmlreference.io/assets/Hal.mp3" autoplay muted loop controls></audio>
+        <video src="https://htmlreference.io/assets/HTML%205%20Video.mp4" autoplay width="200" muted></video>
+    </aside>
+    <footer class="basement">
+        <small>Зменшений текст</small>
+        <p>&copy; 2024 Всі права захищені.</p>
+        <address>Контактна інформація: example@example.com</address>
+    </footer>
 </body>
 
 </html>
