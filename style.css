@@ -1,6 +1,654 @@
+@font-face {
+    font-family: "Ephesis";
+    src: url("/font/Ephesis-Regular.woff2") format("woff2");
+    font-weight: normal;
+}
+
 * {
     margin: 0;
 }
+
 body {
-    background: lightblue !important;
+    background: lightgreen;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main aside"
+        "footer footer";
+}
+
+header {
+    background: lightcyan;
+    grid-area: header;
+}
+
+footer {
+    background: lightgray;
+    text-align: center;
+    grid-area: footer;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    background: lightpink;
+    grid-area: aside;
+    text-align: center;
+    position: relative;
+}
+
+dialog {
+    position: absolute;
+}
+
+
+table,
+th,
+td {
+    border: 2px solid black;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 10px 30px;
+    caption-side: top;
+    table-layout: fixed;
+    empty-cells: show;
+    
+}
+.td {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.div {
+    display: table-cell;
+    width: 100px;
+    height: 100px;
+    background: lightcoral;
+    vertical-align: middle;
+}
+
+/*         thead {
+                    background: lightseagreen;
+                }
+                tbody {
+                    background: lightyellow;
+                }
+                tfoot {
+                    background: lightgray;
+                } */
+
+body {
+    background: lightblue;
+    margin: 15px;
+}
+
+nav {
+    background: white;
+}
+
+.menu {
+    background: blue;
+}
+
+#menu {
+    background: rgb(240, 116, 234) !important;
+}
+
+.body>header>nav#menu {
+    background: lightsalmon;
+}
+
+input[type="number"] {
+    background: lightgreen;
+}
+
+:not(ol)[type] {
+    background: rgb(255, 255, 255);
+}
+
+.div:hover {
+    background: rgb(157, 73, 240);
+}
+
+h2::first-letter {
+    color: red;
+    font-size: 200%;
+}
+
+[title|="Мова"] {
+    background: rgb(189, 22, 169);
+}
+
+[title~="Мова"] {
+    background: rgb(70, 21, 233);
+}
+
+[title^="Мова"] {
+    background: rgb(22, 189, 169);
+}
+
+[title$="JavaScript"] {
+    background: rgb(225, 12, 12) !important;
+}
+
+[title*="таблиця"] {
+    background: rgb(96, 229, 35);
+}
+
+aside>ul {
+    background: rgb(189, 22, 22);
+}
+
+aside ul {
+    background: rgb(189, 22, 22);
+}
+
+/* ul + dl {
+    background: rgb(98, 218, 46);
+} 
+ ul ~ dl {
+     background: rgb(98, 218, 46);
+ } */
+a:hover {
+    background: rgb(183, 0, 255);
+}
+
+a:active {
+    background: rgb(255, 23, 23);
+}
+
+:checked {
+    width: 50px;
+    height: 50px;
+}
+
+option:default {
+    color: red;
+}
+
+input[type="text"]:disabled {
+    border: 3px solid black;
+}
+
+.p {
+    user-select: none;
+}
+
+p:empty {
+    background: pink;
+    height: 20px;
+}
+
+:enabled {
+    border: 3px solid rgb(20, 57, 237);
+}
+
+:focus {
+    outline: 3px solid pink;
+    background: pink;
+}
+
+input[type="number"]:in-range {
+    background: green;
+}
+
+input[type="number"]:out-of-range {
+    background: red;
+}
+
+.nav-f>a:visited {
+    color: black;
+    font-weight: 700;
+}
+
+.nav-f>a:link {
+    color: rgb(250, 1, 1);
+    font-weight: 700;
+}
+
+/* .dl :first-child {
+    background: rgb(138, 251, 26);
+}
+.dl :first-of-type {
+    background: rgb(79, 26, 251);
+}
+.dl :last-child {
+    background: rgb(235, 148, 17);
+}
+.dl :last-of-type {
+    background: rgb(26, 138, 251);
+}
+.dl :nth-child(2) {
+    background: rgb(68, 91, 246);
+}
+.dl :nth-of-type(2) {
+    background: rgb(14, 220, 231);
+}
+.dl :only-child {
+    background: white;
+}
+.dl :only-of-type {
+    background: white;
+} */
+.dl :nth-child(even) {
+    background: rgb(68, 91, 246);
+}
+
+/* 
+input:not(input:invalid) {
+    background: red;
+}
+
+input:not(input:valid) {
+    background: green;
+} */
+
+/* input:required {
+    background: yellow;
+}
+
+input:optional {
+    background: rgb(255, 204, 253);
+} */
+
+
+textarea:read-write {
+    background: rgb(29, 216, 182);
+}
+
+textarea:read-only {
+    background: rgb(208, 17, 222);
+}
+
+p:lang(en) {
+    background: rgb(247, 67, 67);
+}
+
+p:lang(en)::before {
+    content: "**************************";
+}
+
+p:lang(en)::after {
+    content: "**************************";
+}
+
+::placeholder {
+    color: red;
+}
+
+p:lang(en)::first-line {
+    background: pink;
+}
+
+.block {
+    display: block;
+    width: 450px;
+    height: 200px;
+    /* vertical-align: middle; */
+    /*     margin: 30px 60px 45px 50px; */
+    margin-top: 30px;
+    margin-right: 60px;
+    margin-bottom: 45px;
+    margin-left: 50px;
+    padding: 30px;
+    /*     padding-top: 30px;
+    padding-right: 60px;
+    padding-bottom: 45px;
+    padding-left: 50px; */
+    box-sizing: border-box;
+    visibility: visible;
+    /* opacity: 0.5; */
+    position: relative;
+    overflow: hidden;
+    background-image: url("https://htmlreference.io/images/sunset-720.jpg");
+    background-size: 300px 200px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    /*  background-attachment: fixed; */
+    background-position: top left;
+    /*     border: 3px solid rgb(255, 0, 0); */
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(255, 0, 0);
+
+    border-top: 10px dashed rgb(255, 0, 204);
+    /*     border-top-width: 3px;
+    border-top-style: solid;
+    border-top-color: rgb(255, 0, 0);
+ */
+
+    border-right: 4px dashed rgb(40, 228, 65);
+    /*     border-right-width: 4px;
+    border-right-style: dashed;
+    border-right-color: rgb(40, 228, 65); */
+
+    border-bottom: 5px dashed grey;
+    /*     border-bottom-width: 5px;
+    border-bottom-style: dashed;
+    border-bottom-color: rgb(191, 12, 236); */
+    border-left: 5px dotted rgb(255, 165, 0);
+    /*     border-left-width: 10px;
+    border-left-style: double;
+    border-left-color: rgb(255, 165, 0); */
+    border-radius: 30px 20px 10px 40px;
+    /*     border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 40px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 20px; */
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+    /*     background-clip: content-box; */
+    background-origin: content-box;
+    /*     font-family: "Montserrat", sans-serif;
+    font-size: 14pt;
+    font-weight: 100;
+    font-style: oblique;
+    font-variant: small-caps;
+    line-height: 1.5; */
+    font: italic normal 700 14pt/1.5 "Raleway", sans-serif;
+    font-variant-numeric: ordinal;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+    text-transform: inherit;
+    text-indent: 1.25cm;
+    /* text-decoration:wavy overline rgb(230, 227, 26) 1px; */
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(230, 227, 26);
+    text-decoration-line: overline;
+    text-decoration-thickness: 1px;
+    /*    text-emphasis: red dot; */
+    text-emphasis-color: black;
+    text-emphasis-style: triangle open;
+    text-emphasis-position: under;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    cursor: url("/cute-ghost.png"), auto;
+    user-select: none;
+    /*     outline: 5px solid green; */
+    outline-width: 5px;
+    outline-style: dashed;
+    outline-color: green;
+    outline-offset: 20px;
+}
+
+img {
+    pointer-events: none;
+}
+
+input {
+    caret-color: red;
+}
+
+textarea {
+    resize: horizontal;
+}
+
+.block>div {
+    background: pink;
+    width: initial;
+}
+
+
+@media screen and (min-width: 900px) and (max-width: 1000px) {
+    main {
+        background: rgb(215, 99, 241) !important;
+    }
+}
+
+@media screen and (min-height: 400px) and (max-height: 500px) {
+    main {
+        background: rgb(215, 99, 241) !important;
+    }
+}
+
+.div {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background: rgb(119, 217, 242);
+    visibility: visible;
+    position: sticky;
+    top: 0;
+}
+
+/* .block>div:last-child {
+    display: block;
+    height: 50px;
+    width: 50px;
+    background: rgb(122, 222, 21);
+    visibility: visible;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+} */
+.menu {
+    position: sticky;
+}
+
+header {
+    position: relative;
+    top: 100px;
+}
+
+span {
+    letter-spacing: 10px;
+}
+
+.ls {
+    letter-spacing: unset;
+}
+.list-style {
+    list-style-type: square;
+    list-style-position: outside;
+    list-style-image: url(/arrow.svg);
+}
+.list-style li {
+    background: pink;
+}
+.column {
+    width: 100%;
+    column-count: 3;
+    color: black;
+    height: 600px;
+    border: 2px solid green;
+    column-fill: auto;
+   /*  column-rule: 2px solid green; */
+    column-rule-width: 2px;
+    column-rule-style: solid;
+    column-rule-color: green;
+    column-gap: 10px;
+    padding: 10px;
+}
+.cont {
+    width: 100%;
+    height: 50px;
+    background: green;
+}
+.transition {
+    background:rgb(22, 189, 169);
+    width: 250px;
+    height: 250px;
+    border: 2px solid grey;
+    margin-top: 100px;
+   /*  transition: width 2.5s ease-in-out, height 2.5s ease-in-out; */
+        transition-property: width, height;
+        transition-duration: 5s, 5s;
+        transition-timing-function: ease-in, ease-in;
+        transition-delay: 0s, 0s;
+
+        &:hover {
+                background: rgb(189, 22, 169);
+                width: 300px;
+                height: 300px;
+                border: 2px solid black;
+                animation-play-state: paused;
+            }
+}
+
+.animation {
+    animation-name: example;
+    animation-duration: 4s;
+    animation-timing-function: linear;
+    animation-delay: 1ms;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: backwards;
+    animation-play-state: paused;
+}
+@keyframes example {
+0% {
+        background: rgb(22, 189, 169);
+        border: 2px solid grey;
+        transform: rotate(0deg) scale(1, 1) translate(0, 0) skew(0, 0);
+    }
+    50% {
+        background: rgb(70, 21, 233);
+        border: 2px solid black;
+        transform: rotate(180deg) scale(2, 2) translate(150px, 150px) skew(45deg,0);
+
+    }
+    100% {
+        background: rgb(189, 167, 22);
+        border: 2px solid black;
+        transform: rotate(360deg) scale(1, 1) translate(0, 0) skew(0, 0);
+    }
+}
+.transform {
+    transform-origin: center;
+} 
+.filter {
+    /* filter: blur(30px); */
+  /*   filter: brightness(1.1); */
+ /*  filter: contrast(0.1); */
+/*  filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5)); */
+/* filter: grayscale(0.5); */
+/* filter: hue-rotate(10deg); */
+/* filter: invert(0.6); */
+/* filter: opacity(0); */
+/* filter: saturate(0.9); */
+filter: sepia(0.2);
+position: absolute;
+left: 0;
+top: 405px;
+mix-blend-mode: luminosity;
+
+}
+.div-f {
+    display: block;
+    width: 400px;
+    height: 266px;
+    background-image: linear-gradient(180deg, rgba(111, 63, 255, 1) 11.1%, rgba(21, 192, 229, 1) 54.8%, rgba(255, 229, 189, 1) 82.9%);
+   /*  background-blend-mode: darken; */
+}
+.flex {
+    display: flex;
+/*     flex-direction: row;
+    flex-wrap: wrap; */
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: stretch;
+  /*   align-items: stretch;  */
+    background: lightcyan;
+    width: 100%;
+    height: 400px;
+}
+.flex > div {
+    border: 1px solid black;
+    background: rgb(207, 238, 203);
+    padding: 10px;
+ /*    width: 150px; */
+ flex-basis: 100px; 
+    /* flex-grow: 1; */
+    flex-shrink: 1;
+}
+
+.flex > div:first-child {
+    align-self: flex-start;
+   /*  flex-grow: 3; */
+   flex-shrink: 2;
+}
+
+.flex>div:nth-child(4) {
+   order: -1;
+  /*  flex-grow: 2; */
+}
+.grid {
+    place-items: stretch;
+    background: yellow;
+    width: 600px;
+    height: 400px;
+    display: grid;
+   /*  grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header"
+        ". aside"
+        ". aside"; */
+
+/*     grid-template: "header header" 1fr
+                   ". aside" 1fr  
+                   ". aside" 1fr      
+                   / 1fr 1fr;
+
+*/
+
+grid: "header header" 1fr ". aside" 1fr ". aside" 1fr / 1fr 1fr;
+/* grid-gap: 10px 20px; */
+/*     grid-column-gap: 10px;
+    grid-row-gap: 20px; */
+    overflow: auto;
+
+     grid-auto-rows: 100px;
+       /* grid-auto-columns: 300px; */
+        grid-auto-flow: row;
+
+}
+.grid>div {
+    background: orange;
+    border: 1px solid black;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.grid>div:nth-child(1) {
+    grid-area: header;
+}
+.grid>div:nth-child(3) {
+    grid-area: aside;
+}
+.grid>div:nth-child(4) {
+    grid-row-start: 3;
+    grid-row-end: 5;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+.grid>div:nth-child(5) {
+    grid-row: 5 / 6;
+    grid-column: 1 / 3;
+}
+.content {
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    width: 400px;
+    height: 400px;
+    background: lightcyan;
+}
+.content > div {
+    border: 1px solid black;
+    box-sizing: border-box;
+    padding: 20px;
+    background: lightcoral;
+}
+.content>div:first-child {
+    align-self: center;
+    justify-self: center;
 }

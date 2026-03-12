@@ -11,88 +11,35 @@
     <!-- <meta http-equiv="refresh" content="1"> -->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <style>
-        body {
-            background: lightgreen;
-            display: grid;
-            grid-template-areas:
-                "header header"
-                "main aside"
-                "footer footer";
-        }
-
-        header {
-            background: lightcyan;
-            grid-area: header;
-        }
-
-        footer {
-            background: lightgray;
-            text-align: center;
-            grid-area: footer;
-        }
-
-        main {
-            grid-area: main;
-        }
-
-        aside {
-            background: lightpink;
-            grid-area: aside;
-            height: 100vh;
-        }
-
-        table,
-        th,
-        td {
-            border: 1px solid black;
-        }
-
-        table {
-            width: 100%;
-        }
-
-        .div {
-            display: table-cell;
-            width: 100px;
-            height: 100px;
-            background: lightcoral;
-            vertical-align: middle;
-        }
-/*         thead {
-            background: lightseagreen;
-        }
-        tbody {
-            background: lightyellow;
-        }
-        tfoot {
-            background: lightgray;
-        } */
-    </style>
     <title>Про HTML - WEB BOOK</title>
     <noscript>
         <p>JavaScript is disabled in your browser.</p>
     </noscript>
     <base href="http://127.0.0.1:5500/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body style="background: lightgoldenrodyellow">
+<body style="background: lightgoldenrodyellow" class="body">
     <header>
         <h1>Про HTML</h1><br>
-        <p><dfn><abbr title="Мова розмітки гіпертексту">HTML</abbr></dfn> - це стандартна мова для створення
+        <p><dfn><abbr title="Моваhозмітки гіпертексту">HTML</abbr></dfn> - це стандартна мова для створення
             веб-сторінок.
         </p>
-        <nav>
+        <nav class="menu" id="menu">
             <a href="/">Головна</a> |
             <a href="#date">Поточна дата і час</a> |
-            <a href="https://example.com">Example.com</a> |
+            <a href="https://example.com" target="_blank">Example.com</a> |
             <a href="contact.html">Контакти</a>
         </nav>
     </header>
     <main>
         <section>
             <h2>Hello World</h2>
-            <h6>Hello World</h6>
+            <h6 title="Каскадна таблиця стилів">СSS</h6>
+            <abbr title="програмування Мова JavaScript">JS</abbr>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>
                 Quaerat rem laborum dolor commodi expedita, ad asperiores eveniet cum dicta
                 apedgssssssssssssssssssssssdgdgdsfgdsge<wbr>gedgdgdfgdfdfgdfgdfgdfgdferhrhnhdfhbdfbdfbriam velit enim accusamus inventore architecto. Quidem sunt iusto molestias quis!
@@ -130,9 +77,45 @@
             H<sub>2</sub>O
             <time id="date"></time>
             <center>Центрований текст</center>
-            <div class="div">
-                Контейнерний елемент div
+            <div class="block">
+                <span class="ls">Ранок у місті починається з тихого шелесту</span>
+                дерев і запаху свіжої кави з маленької кав’ярні на розі. Люди поспішають у
+                справах, але в їхніх очах живе надія на добрий день. На площі діти годують голубів, музикант грає теплу
+                мелодію, а сонце
+                повільно золотить дахи будинків. У такі миті розумієш: щастя не завжди гучне, воно ховається в простих
+                речах — усмішці
+                перехожого, слові підтримки та відчутті, що ти на своєму місці.
             </div>
+
+            <p>This text is red.</p>
+            <div class="foo">
+                <p>This text is also red.</p>
+            </div>
+            <div class="bar">
+                <p>This text is green (default inherited value).</p>
+            </div>
+
+            <style>
+                .foo {
+                    color: blue;
+                }
+
+                .bar {
+                    color: green;
+                }
+
+                p {
+                    color: red;
+                }
+
+                .foo p {
+                    color: unset;
+                }
+
+                .bar p {
+                    color: unset;
+                }
+            </style>
 
             <script>
                 function updateClock() {
@@ -192,8 +175,8 @@
             <table>
                 <caption>Таблиця 1.1 - Приклад таблиці</caption>
                 <colgroup>
-                <col span="2" style="background-color:rgb(57, 122, 144)">
-                <col span="1" style="background-color:rgb(112, 185, 209)">
+                    <col span="2" style="background-color:rgb(57, 122, 144)">
+                    <col span="1">
                 </colgroup>
                 <thead>
                     <tr>
@@ -204,8 +187,10 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td rowspan="2">4</td>
-                        <td>5</td>
+                        <td rowspan="2" class="td">4</td>
+                        <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores sapiente illum consequatur
+                            fuga inventore aperiam sequi temporibus tenetur ab, itaque quaerat dicta veniam saepe dolore
+                            dignissimos, voluptatum similique, cupiditate facilis?</td>
                         <td>6</td>
                     </tr>
                     <tr>
@@ -215,35 +200,156 @@
                 </tbody>
                 <tfoot>
                     <td colspan="2">10</td>
-                    <td>12</td>
+                    <td></td>
                 </tfoot>
             </table>
+            <p class="p" contenteditable="true"></p>
             <form action="post.php" method="post" autocomplete="off">
-                <input type="text" maxlength="30" placeholder="Введіть текст" value="Введіть текст" name="text" readonly>
+                <input type="text" maxlength="30" placeholder="Введіть текст" value="Введіть текст" name="text"
+                    disabled>
                 <input type="number" name="number" id="number" min="1" max="10" step="0.5" value="5">
                 <input type="date" name="date" id="date">
                 <input type="time" name="time" id="time">
                 <input type="datetime-local" name="datetime-local" id="datetime-local">
                 <input type="week" name="week" id="week">
                 <input type="month" name="month" id="month">
-                <input type="datetime" name="datetime" id="datetime" placeholder="05.02.2026" pattern="\d\d\.\d\d\.\d\d\d\d" title="Введіть дату формату 00.00.0000" value="05.02.2026">
+                <input type="datetime" name="datetime" id="datetime" placeholder="05.02.2026"
+                    pattern="\d\d\.\d\d\.\d\d\d\d" title="Введіть дату формату 00.00.0000" value="05.02.2026">
                 <input type="reset" value="Скинути">
                 <input type="button" value="Натисни мене" onclick="alert('Ви натиснули кнопку!')">
                 <input type="file" name="file" id="file" accept="application/zip" multiple>
-                <button type="reset"><img src="https://htmlreference.io/images/html-reference-type.png" width="100" alt="HTML5 Logo"></button>
-                <input type="image" src="https://htmlreference.io/images/html-reference-type.png" width="100" alt="Кнопка зображення">
+                <button type="reset"><img src="https://htmlreference.io/images/html-reference-type.png" width="100"
+                        alt="HTML5 Logo"></button>
+                <input type="image" src="https://htmlreference.io/images/html-reference-type.png" width="100"
+                    alt="Кнопка зображення">
                 <input type="color" name="color" id="color">
-                <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._]+@gmail\.com" title="Введіть email у форматі example@gmail.com" placeholder="Введіть email">
-                <input type="tel" name="tel" id="tel" pattern="\+380\d{2}-\d{2}-\d{2}-\d{3}" title="Введіть телефон у форматі +38000-00-00-000" placeholder="Введіть телефон">
+                <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._]+@gmail\.com"
+                    title="Введіть email у форматі example@gmail.com" placeholder="Введіть email" required>
+                <input type="tel" name="tel" id="tel" pattern="\+380\d{2}-\d{2}-\d{2}-\d{3}"
+                    title="Введіть телефон у форматі +38000-00-00-000" placeholder="Введіть телефон">
+                <input type="url" name="url" id="url" placeholder="Введіть URL">
+                <input type="password" name="password" id="password" placeholder="Введіть пароль">
+                <input type="search" name="search" id="search" placeholder="Введіть текст для пошуку"><br>
+                <label for="range">1</label><input type="range" name="range" id="range" min="1" max="100" step="1"
+                    value="1"><label for="range">100</label>
+                <output id="rangeOutput">1</output>
+                <script>
+                    const rangeInput = document.getElementById("range");
+                    const rangeOutput = document.getElementById("rangeOutput");
+                    rangeInput.addEventListener("input", function () {
+                        rangeOutput.textContent = rangeInput.value;
+                    });
+                </script>
+                <input type="hidden" name="hidden" value="Приховане значення">
+                <input type="checkbox" name="checkbox" id="checkbox"><label for="checkbox">Погоджуюсь з умовами</label>
+                <br>
+                <fieldset>
+                    <legend>Виберіть одну з опцій</legend>
+                    <input type="radio" name="radio" id="radio1" value="option1" checked><label for="radio1">Опція
+                        1</label>
+                    <input type="radio" name="radio" id="radio2" value="option2"><label for="radio2">Опція 2</label>
+                    <input type="radio" name="radio" id="radio3" value="option3"><label for="radio3">Опція 3</label>
+                </fieldset>
+                <select name="select" id="select">
+                    <option value="" disabled selected>--Оберіть опцію--</option>
+                    <optgroup label="Опції 1-2">
+                        <option value="option1">Опція 1</option>
+                        <option value="option2">Опція 2</option>
+                    </optgroup>
+                    <optgroup label="Опції 3-4">
+                        <option value="option3">Опція 3</option>
+                        <option value="option4">Опція 4</option>
+                    </optgroup>
+                </select>
+                <input list="datalist" name="datalist" id="datalistInput" placeholder="Оберіть колір">
+                <datalist id="datalist">
+                    <option>Зелений</option>
+                    <option>Жовтий</option>
+                    <option>Золотий</option>
+                    <option>Срібний</option>
+                </datalist>
+                <br>
+                <textarea name="textarea" id="textarea" placeholder="Введіть текст"
+                    readonly>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum maiores, esse pariatur alias, doloribus exercitationem ipsum quod necessitatibus voluptatibus eos velit tempora magni quasi ea cupiditate quae reiciendis obcaecati autem?</textarea>
+                <textarea name="textarea" id="textarea"
+                    placeholder="Введіть текст">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum maiores, esse pariatur alias, doloribus exercitationem ipsum quod necessitatibus voluptatibus eos velit tempora magni quasi ea cupiditate quae reiciendis obcaecati autem?</textarea>
                 <input type="submit" value="Відправити">
             </form>
+            <p lang="en">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facilis vel corrupti aperiam? Placeat
+                nulla nam ex, reprehenderit a animi non similique omnis porro, magnam id atque soluta quis vitae et!</p>
+            <img src="https://htmlreference.io/images/world-continents.png" width="320" height="160" orgwidth="320"
+                orgheight="160" usemap="#world-continents">
+            <map name="world-continents">
+                <area title="North America" href="https://en.wikipedia.org/wiki/North_America" shape="poly"
+                    coords="48,89,67,69,77,49,140,0,68,0,6,10,4,31,16,69">
+                <area title="South America" href="https://en.wikipedia.org/wiki/South_America" shape="poly"
+                    coords="48,88,61,74,119,99,95,160,66,159">
+                <area title="Europe" href="https://en.wikipedia.org/wiki/Europe" shape="poly"
+                    coords="124,49,145,46,158,50,187,43,198,6,146,1,115,21">
+                <area title="Africa" href="https://en.wikipedia.org/wiki/Africa" shape="poly"
+                    coords="121,53,140,47,169,51,186,77,196,80,188,137,156,136,138,97,118,86">
+                <area title="Asia" href="https://en.wikipedia.org/wiki/Asia" shape="poly"
+                    coords="166,50,184,77,201,74,215,91,258,108,263,87,283,74,297,8,192,3,191,29,187,46,170,42">
+                <area title="Australia" href="https://en.wikipedia.org/wiki/Australia_(continent)" shape="poly"
+                    coords="257,107,263,85,314,89,316,137,294,151,249,132,248,114">
+            </map>
+            <ul class="list-style">
+                <li>Текст 1</li>
+                <li>Текст 2</li>
+                <li>Текст 3</li>
+            </ul>
+            <article class="column"><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ea sunt
+                    illo facere non, dolore odio
+                    rem, voluptas impedit tempore porro excepturi enim officia voluptatem omnis repellendus pariatur
+                    necessitatibus! Magnam.</span>
+                <div class="cont">Контейнер</div><span>
+                    Ipsam earum doloribus dolore repellat dicta labore ipsa odit. Quibusdam excepturi ratione labore
+                    corrupti blanditiis quaerat, ea magni omnis quos! Tempora iusto facilis laborum impedit optio nulla
+                    quae
+                    accusantium odit!
+                    Minus neque omnis adipisci perspiciatis dolorem ea quaerat natus culpa at et delectus, fugiat
+                    cupiditate
+                    consectetur recusandae eos qui odit incidunt id tenetur consequatur ut maxime similique. Natus, eos
+                    doloribus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ea sunt illo facere
+                    non, dolore odio
+                    rem, voluptas impedit tempore porro excepturi enim officia voluptatem omnis repellendus pariatur
+                    necessitatibus! Magnam.
+                    Ipsam earum doloribus dolore repellat dicta labore ipsa odit. Quibusdam excepturi ratione labore
+                    corrupti blanditiis quaerat, ea magni omnis quos! Tempora iusto facilis laborum impedit optio nulla
+                    quae
+                    accusantium odit!
+                    Minus neque omnis adipisci perspiciatis dolorem ea quaerat natus culpa at et delectus, fugiat
+                    cupiditate
+                    consectetur recusandae eos qui odit incidunt id tenetur consequatur ut maxime similique. Natus, eos
+                    doloribus? Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium ea sunt illo facere
+                    non, dolore odio
+                    rem, voluptas impedit tempore porro excepturi enim officia voluptatem omnis repellendus pariatur
+                    necessitatibus! Magnam.
+                    Ipsam earum doloribus dolore repellat dicta labore ipsa odit. Quibusdam excepturi ratione labore
+                    corrupti blanditiis quaerat, ea magni omnis quos! Tempora iusto facilis laborum impedit optio nulla
+                    quae
+                    accusantium odit!
+                    Minus neque omnis adipisci perspiciatis dolorem ea quaerat natus culpa at et delectus, fugiat
+                    cupiditate
+                    consectetur recusandae eos qui odit incidunt id tenetur consequatur ut maxime similique. Natus, eos
+                    doloribus?</span>
+
+            </article>
+
+
         </section>
     </main>
     <aside>
         <ol type="I" start="4">
             <li>Текст 1</li>
             <li>Текст 2</li>
-            <li>Текст 3</li>
+            <li>
+                <ul>
+                    <li>Текст 1</li>
+                    <li>Текст 2</li>
+                    <li>Текст 3</li>
+                </ul>
+            </li>
         </ol>
         <ul>
             <li>Текст 1</li>
@@ -258,17 +364,80 @@
             <dt>Термін 3</dt>
             <dd>Опис терміну 3</dd>
         </dl>
+        <br><br>
+        <dl class="dl">
+            <dt>Термін 1</dt>
+            <dd>Опис терміну 1</dd>
+            <dt>Термін 2</dt>
+            <dd>Опис терміну 2</dd>
+            <dt>Термін 3</dt>
+            <dd>Опис терміну 3</dd>
+        </dl>
         <figure>
-            <img src="https://htmlreference.io/images/sunset-720.jpg" width="200" alt="Захід сонця">
+            <div class="div-f"></div>
+           <img class="filter" src="https://htmlreference.io/images/sunset-720.jpg" width="400" alt="Захід сонця"> 
             <figcaption>Рисунок 1.1 - Захід сонця над морем</figcaption>
         </figure>
         <audio src="https://htmlreference.io/assets/Hal.mp3" autoplay muted loop controls></audio>
         <video src="https://htmlreference.io/assets/HTML%205%20Video.mp4" autoplay width="200" muted></video>
+        <iframe src="https://htmlreference.io" frameborder="0" width="360" height="500"></iframe>
+        <details>
+            <summary>Read more</summary>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec nulla vitae mollis.</p>
+        </details>
+        <button id="btn">Open Dialog</button>
+        <dialog open>
+            This is a dialog box!
+        </dialog>
+        <script>
+            const dialog = document.querySelector("dialog");
+            const button = document.getElementById("btn");
+            button.addEventListener("click", () => {
+                dialog.show();
+            });
+            dialog.addEventListener("click", () => {
+                dialog.close();
+            });
+        </script>
+        <div class="transition animation transform">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, obcaecati. Aliquam alias accusamus, quidem
+            illum ipsa soluta culpa dolore excepturi? Aspernatur dolorem est minima eligendi voluptate enim repudiandae
+            alias incidunt.
+        </div>
+        <div class="flex">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+        </div>
+                <div class="grid">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                    <div>5</div>
+                    <div>6</div>
+                    <div>7</div>
+                    <div>8</div>
+                </div>
+                <div class="content">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
+                </div>
     </aside>
     <footer class="basement">
         <small>Зменшений текст</small>
         <p>&copy; 2024 Всі права захищені.</p>
         <address>Контактна інформація: example@example.com</address>
+        <nav class="nav-f">
+            <a href="/">Головна</a> |
+            <a href="#date">Поточна дата і час</a> |
+            <a href="https://example.com" target="_blank">Example.com</a> |
+            <a href="contact.html">Контакти</a>
+        </nav>
     </footer>
 </body>
 
